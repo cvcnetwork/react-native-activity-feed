@@ -7,7 +7,6 @@ export const handleError = (
   type: FlowRequestTypes,
   detail: Object,
 ) => {
-  console.warn(error);
   alert(getErrorMessage(error, type, detail));
 };
 
@@ -16,7 +15,6 @@ export const getErrorMessage = (
   type: FlowRequestTypes,
   detail: Object,
 ): string => {
-  console.warn(error);
   if (!(error instanceof stream.errors.StreamApiError)) {
     return fallbackErrorMessage(error, type, detail);
   }
